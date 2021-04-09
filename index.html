@@ -24,7 +24,8 @@
 <body>
     <main class="container">
         <div class="row">
-            <div class="col-md-6">
+            <!-- put converter in middle of the page -->
+            <div class="col-md-6 offset-md-3">
                 <h1 class="display-4 text-center mb-3">
                     Weight Converter
                 </h1>
@@ -65,16 +66,21 @@
     </main>
 
     <script type="text/javascript">
-    //grab input with ID and add event listener for input event then run function
-    document.getElementById('lbsInput').addEventListener('input', function(e){
-       //get input with event 
-        let lbs = e.target.value;
-        //target the output IDs and out equivakent
-        document.getElementById('grams-output').innerHTML = lbs / 0.0022046;
-        document.getElementById('kg-output').innerHTML = lbs / 2.2046;
-        document.getElementById('oz-output').innerHTML = lbs * 16;
+        //out has hidden visibility on page load then visible when target function is evoked
+        document.getElementById('output').style.visibility = 'hidden'
+        //grab input with ID and add event listener for input event then run function
+        document.getElementById('lbsInput').addEventListener('input', function (e) {
+        //visibility
+            document.getElementById('output').style.visibility = 'visible';
+        
+            //get input with event 
+            let lbs = e.target.value;
+            //target the output IDs and out equivakent
+            document.getElementById('grams-output').innerHTML = lbs / 0.0022046;
+            document.getElementById('kg-output').innerHTML = lbs / 2.2046;
+            document.getElementById('oz-output').innerHTML = lbs * 16;
 
-    })
+        })
     </script>
 </body>
 </html>

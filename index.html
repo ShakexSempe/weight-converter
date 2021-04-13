@@ -27,7 +27,7 @@
             <!-- put converter in middle of the page -->
             <div class="col-md-6 offset-md-3">
                 <h1 class="display-4 text-center mb-3">
-                    Weight Converter
+                    Pounds Converter
                 </h1>
                 <form>
                     <div class="form-group">
@@ -63,24 +63,52 @@
                 </div>
             </div>
         </div>
+
+        <div class="row">
+            <!-- put converter in middle of the page -->
+            <div class="col-md-6 offset-md-3">
+                <h1 class="display-4 text-center mb-3">
+                    Meter Converter
+                </h1>
+                <form>
+                    <div class="form-group">
+                        <input 
+                        id="meter-Input"
+                        type="number" 
+                        class="from-control form-control-lg" 
+                        placeholder="Enter Meter...">
+                    </div>
+                </form>
+                <div id="meter-output">
+
+                    <div class="card bg-primary mb-2">
+                        <div class="card-block">
+                            <h4>Kilometers:</h4>
+                            <div id="km-output"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="card bg-success mb-2">
+                        <div class="card-block">
+                            <h4>Foot:</h4>
+                            <div id="feet-output"></div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-danger mb-2">
+                        <div class="card-block">
+                            <h4>Inches:</h4>
+                            <div id="inches-output"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
     <script type="text/javascript">
-        //out has hidden visibility on page load then visible when target function is evoked
-        document.getElementById('output').style.visibility = 'hidden'
-        //grab input with ID and add event listener for input event then run function
-        document.getElementById('lbsInput').addEventListener('input', function (e) {
-        //visibility
-            document.getElementById('output').style.visibility = 'visible';
         
-            //get input with event 
-            let lbs = e.target.value;
-            //target the output IDs and out equivakent
-            document.getElementById('grams-output').innerHTML = lbs / 0.0022046;
-            document.getElementById('kg-output').innerHTML = lbs / 2.2046;
-            document.getElementById('oz-output').innerHTML = lbs * 16;
-
-        })
     </script>
+    <script src="main.js"></script>
 </body>
 </html>
